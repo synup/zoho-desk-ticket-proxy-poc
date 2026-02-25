@@ -1,0 +1,25 @@
+# Dependencies and env (not copied into image)
+**/node_modules
+**/.env
+*.log
+npm-debug.log*
+
+# Git and editor
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
+
+# Frontend (not needed for server image)
+dist
+dist-ssr
+*.local
+src
+public
+index.html
+vite.config.ts
+tsconfig*.json
+eslint.config.js
+/package-lock.json
+/package.json

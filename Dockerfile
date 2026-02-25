@@ -5,13 +5,13 @@ FROM node:20-alpine
 WORKDIR /app
 
 # Copy package files first (for caching)
-COPY package*.json ./
+COPY server/package*.json ./
 
 # Install only production dependencies
 RUN npm install --omit=dev
 
-# Copy rest of the source code
-COPY . .
+# Copy server source code
+COPY server/ .
 
 # Expose server port
 EXPOSE 3001

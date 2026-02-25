@@ -12,10 +12,18 @@ This server keeps your Zoho `client_secret` and `refresh_token` off the frontend
 
 ## Run
 
+**Locally:**
 ```bash
 cd server
 npm install
 npm start
+```
+
+**Docker (from repo root):**
+```bash
+# From repo root
+docker build -t zoho-server .
+docker run -p 3001:3001 --env-file server/.env zoho-server
 ```
 
 Runs on port 3001 by default. Use `PORT=3002 npm start` to change.
