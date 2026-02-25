@@ -1,0 +1,137 @@
+.ticket-success-banner {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.ticket-success-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid #bbf7d0;
+}
+
+.ticket-success-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #15803d;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.ticket-success-badge svg {
+  flex-shrink: 0;
+}
+
+.ticket-success-dismiss {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.ticket-success-dismiss:hover {
+  color: #334155;
+}
+
+.ticket-success-body {
+  padding: 24px;
+}
+
+.ticket-success-message {
+  margin: 0 0 16px;
+  font-size: 0.9375rem;
+  color: #166534;
+  line-height: 1.6;
+}
+
+.ticket-success-id {
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+  color: #166534;
+}
+
+.ticket-success-id code {
+  background: rgba(22, 101, 52, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: ui-monospace, monospace;
+  font-size: 0.8125rem;
+}
+
+.ticket-success-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ticket-success-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: #166534;
+}
+
+.ticket-success-detail svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ticket-success-desc {
+  padding-left: 28px;
+  color: #15803d;
+  font-style: italic;
+}
+
+.ticket-success-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ticket-success-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: #166534;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.ticket-success-meta-item svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.ticket-success-note {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: #15803d;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+  .ticket-success-header,
+  .ticket-success-body {
+    padding: 16px;
+  }
+
+  .ticket-success-meta {
+    flex-direction: column;
+  }
+}
