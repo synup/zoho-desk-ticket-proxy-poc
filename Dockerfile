@@ -7,7 +7,7 @@ COPY tsconfig*.json ./
 COPY index.html ./
 COPY src/ ./src/
 COPY public/ ./public/
-RUN npm install && npm run build && rm -f .npmrc
+RUN npm install --legacy-peer-deps && npm run build && rm -f .npmrc
 
 # Stage 2: Combined image — nginx (frontend) + node (backend)
 FROM node:20-alpine
