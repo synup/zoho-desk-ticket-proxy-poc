@@ -1,7 +1,7 @@
 # Stage 1: Build frontend
 FROM node:20-alpine AS frontend-builder
 WORKDIR /app
-COPY package*.json ./
+COPY package.json ./
 COPY tsconfig*.json ./
 COPY index.html ./
 COPY src/ ./src/

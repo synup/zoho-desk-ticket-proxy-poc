@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@synup/client-ui-components": "file:../../Downloads/Demo/Design System",
+    "@synup/client-ui-components": "^0.4.18",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-feather": "^2.0.10",
