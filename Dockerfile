@@ -2,11 +2,12 @@
 FROM node:20-alpine AS frontend-builder
 WORKDIR /app
 COPY package.json ./
+COPY .npmrc ./
 COPY tsconfig*.json ./
 COPY index.html ./
 COPY src/ ./src/
 COPY public/ ./public/
-RUN npm install && npm run build
+RUN npm install && npm run build && rm -f .npmrc
 
 # Stage 2: Combined image — nginx (frontend) + node (backend)
 FROM node:20-alpine
