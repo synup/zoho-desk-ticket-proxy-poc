@@ -1,20 +1,31 @@
-# Use lightweight Node image
+# Stage 1: Build frontend
+FROM node:20-alpine AS frontend-builder
+WORKDIR /app
+COPY package*.json ./
+COPY tsconfig*.json ./
+COPY index.html ./
+COPY src/ ./src/
+COPY public/ ./public/
+RUN npm install && npm run build
+
+# Stage 2: Combined image — nginx (frontend) + node (backend)
 FROM node:20-alpine
 
-# Create app directory
-WORKDIR /app
+# Install nginx
+RUN apk add --no-cache nginx
 
-# Copy package files first (for caching)
+# Copy built frontend assets
+COPY --from=frontend-builder /app/dist /usr/share/nginx/html
+
+# Copy nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Setup backend
+WORKDIR /app/server
 COPY server/package*.json ./
-
-# Install only production dependencies
 RUN npm install --omit=dev
-
-# Copy server source code
 COPY server/ .
 
-# Expose server port
-EXPOSE 3001
-
-# Start the app
+# Default CMD is backend (node); frontend container overrides to nginx
+EXPOSE 80 3001
 CMD ["node", "index.js"]
