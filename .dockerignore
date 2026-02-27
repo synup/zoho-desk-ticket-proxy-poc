@@ -15,7 +15,12 @@ npm-debug.log*
 .idea
 .DS_Store
 
-# Build output (built inside Docker)
-dist
-dist-ssr
-*.local
+# Frontend source (not needed — only public/ticket-widget.js is served)
+src/
+index.html
+package.json
+package-lock.json
+.npmrc
+tsconfig*.json
+vite.config.ts
+eslint.config.js
