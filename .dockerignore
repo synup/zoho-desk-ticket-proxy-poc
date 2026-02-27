@@ -1,6 +1,10 @@
-# Dependencies and env (not copied into image)
+# Dependencies (installed inside Docker)
 **/node_modules
+
+# Environment files
 **/.env
+
+# Logs
 *.log
 npm-debug.log*
 
@@ -11,15 +15,7 @@ npm-debug.log*
 .idea
 .DS_Store
 
-# Frontend (not needed for server image)
+# Build output (built inside Docker)
 dist
 dist-ssr
 *.local
-src
-public
-index.html
-vite.config.ts
-tsconfig*.json
-eslint.config.js
-/package-lock.json
-/package.json
